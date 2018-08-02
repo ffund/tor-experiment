@@ -50,7 +50,7 @@ TestingV3AuthInitialDistDelay 20
 EOL"
 
 sudo apt-get update
-sudo apt-get -y install apache2 php5 libapache2-mod-php5
+sudo apt-get -y install apache2 libapache2-mod-php
 
 sudo bash -c "cat >/var/www/html/relay.conf <<EOL
 TestingTorNetwork 1
