@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get -y install apache2 php5 libapache2-mod-php5
+sudo apt-get -y install apache2 libapache2-mod-php
 
 sudo rm /var/www/html/index.html
 echo '<?php' | sudo tee -a /var/www/html/index.php
