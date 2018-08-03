@@ -3,6 +3,12 @@
 # and creating a list of tuples of useful information. Lastly, a number of plots
 # and tables are also created to visualize the fingerprint.
 
+# Ignores unnecessary warnings
+import warnings
+warnings.filterwarnings("ignore", message="numpy.dtype size changed")
+warnings.filterwarnings("ignore", message="numpy.ufunc size changed")
+warnings.filterwarnings("ignore", message="Using the barplot function without specifying `order`")
+
 import csv
 import argparse
 import numpy as np
@@ -18,7 +24,7 @@ import seaborn as sns
 import matplotlib.pylab as pyp
 import matplotlib.patches as mpatches
 
-from pandas.tools.plotting import table
+from pandas.plotting import table
 
 def custom_legend(colors,labels, legend_location = 'upper left', legend_boundary = (1,1)):
     # Create custom legend for colors
@@ -246,7 +252,7 @@ ax.yaxis.set_visible(False)  # hide the y axis
 
 table(ax, df, loc='center')  # where df is your data frame
 
-plt.savefig(filename + "-fingerprint-table.png")
+plt.savefig(filename + "-fingerprint-table.png", bbox_inches='tight')
 plt.savefig(filename + "-fingerprint-table.pdf")
 
 print packetList
