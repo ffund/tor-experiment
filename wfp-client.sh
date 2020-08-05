@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get -y --force-yes install tor vim curl tor-arm python-pip
+sudo apt-get -y --force-yes install tor vim curl tor-arm python-pip proxychains
 sudo pip install stem
 
 wget https://raw.githubusercontent.com/tfukui95/tor-experiment/master/utilities/exit-relay.py
