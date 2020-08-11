@@ -16,24 +16,19 @@ make
 sudo make install  
 sudo ldconfig  
 
-cd /tmp
-cd ~  
-svn co http://witestlab.poly.edu/repos/genimooc/dash_video/vlc-2.1.0-git  
-cd vlc-2.1.0-git  
-./configure LIBS="-loml2" --enable-run-as-root --disable-lua --disable-live555 --disable-alsa --disable-dvbpsi --disable-freetype
-make  
-sudo make install  
-sudo mv /usr/local/bin/vlc /usr/local/bin/vlc_app  
+# cd /tmp
+# cd ~  
+# svn co http://witestlab.poly.edu/repos/genimooc/dash_video/vlc-2.1.0-git  
+# cd vlc-2.1.0-git  
+# ./configure LIBS="-loml2" --enable-run-as-root --disable-lua --disable-live555 --disable-alsa --disable-dvbpsi --disable-freetype
+# make  
+# sudo make install  
 
-sudo bash -c "cat >/usr/local/bin/vlc <<EOL
-#!/bin/sh
+sudo wget "https://raw.githubusercontent.com/ffund/tor-experiment/master/vlc_app" --output-document /usr/local/bin/vlc_app
+sudo chmod +x /usr/local/bin/vlc_app 
 
-export LD_LIBRARY_PATH="/usr/local/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH}"
-export TERM=xterm
-vlc_app "$@"
-EOL"
-
-chmod +x /usr/local/bin/vlc  
+sudo wget https://raw.githubusercontent.com/ffund/tor-experiment/master/vlc --output-document /usr/local/bin/vlc
+sudo chmod +x /usr/local/bin/vlc  
 
 sudo -u debian-tor tor --list-fingerprint --orport 1 \
     --dirserver "x 127.0.0.1:1 ffffffffffffffffffffffffffffffffffffffff" \
