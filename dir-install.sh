@@ -1,5 +1,5 @@
 sudo apt-get update 
-sudo apt-get -y --force-yes install tor vim curl tor-arm apache2 php5 libapache2-mod-php5
+sudo apt-get -y --force-yes install tor vim curl tor-arm apache2 php5 libapache2-mod-php5 expect
 
 
 sudo /etc/init.d/tor stop
