@@ -7,17 +7,7 @@ sudo pkill -9 tor
 
 sudo -u debian-tor mkdir /var/lib/tor/keys
 
-sudo bash -c "expect <<EOL
-#!/usr/bin/expect -f
-
-set timeout -1
-spawn sudo -u debian-tor tor-gencert --create-identity-key -m 12 -a 192.168.1.4:7000 -i /var/lib/tor/keys/authority_identity_key -s /var/lib/tor/keys/authority_signing_key -c /var/lib/tor/keys/authority_certificate
-
-
-expect {Enter PEM pass phrase:} {send "SecretPassword\n"}
-expect {Verifying - Enter PEM pass phrase:} {send "SecretPassword\n"}
-expect eof
-EOL"
+wget -qO- https://raw.githubusercontent.com/ffund/tor-experiment/master/dir.exp | /usr/bin/expect
 
 sudo -u debian-tor tor --list-fingerprint --orport 1 --dirserver "x 127.0.0.1:1 ffffffffffffffffffffffffffffffffffffffff" --datadirectory /var/lib/tor/
 
