@@ -27,7 +27,7 @@ sudo ldconfig
 sudo ldconfig
 sudo wget https://nyu.box.com/shared/static/sjnyxmfy2jk4ekxi720o9d80bvxh5z9j.tgz --output-document /root/vlc-2.1.0-git.tgz
 sudo tar -xzvf  /root/vlc-2.1.0-git.tgz  --directory=/root
-sudo sh -c '/root/vlc-2.1.0-git; make install'
+sudo sh -c 'cd /root/vlc-2.1.0-git; make install'
 sudo ldconfig
 
 # cd /tmp
