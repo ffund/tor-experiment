@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get -y --force-yes install tor vim curl tor-arm
+sudo apt-get -y --force-yes install tor vim curl tor-arm proxychains
 sudo pkill -9 tor
 
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/devel:/tools:/mytestbed:/stable/xUbuntu_12.04/ /' >> /etc/apt/sources.list.d/oml2.list"  
