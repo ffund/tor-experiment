@@ -13,6 +13,6 @@ sudo /etc/init.d/apache2 restart
 sudo wget --no-clobber http://witestlab.poly.edu/repos/genimooc/dash_video/BigBuckBunny_2s_480p_only.tar.gz --output-document /var/www/html/BigBuckBunny_2s_480p_only.tar.gz
 cd /var/www/html; sudo tar -zxvf BigBuckBunny_2s_480p_only.tar.gz  
 
-cd /var/www/htmlvideo; sudo rm bunny_Desktop.mpd  
+cd /var/www/html/video; sudo rm /var/www/html/video/bunny_Desktop.mpd  
 wget --no-clobber -nH --no-parent "https://raw.githubusercontent.com/ffund/tor-experiment/master/bunny_Desktop.mpd"  --output-document /var/www/html/video/bunny_Desktop.mpd
 
